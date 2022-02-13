@@ -1,7 +1,7 @@
 package com.example.HotelApp.service;
 
-import com.example.HotelApp.models.MyUserDetails;
-import com.example.HotelApp.models.User;
+import com.example.HotelApp.model.MyUserDetails;
+import com.example.HotelApp.model.User;
 import com.example.HotelApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,10 +19,11 @@ public class MyUserDetailsService implements UserDetailsService{
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        Optional<User> user = userRepository.findByUserName(userName);
-
-        user.orElseThrow(() -> new UsernameNotFoundException("Not found: " + userName));
-
-        return user.map(MyUserDetails::new).get();
+//        Optional<User> user = userRepository.findByUserName(userName);
+//
+//        user.orElseThrow(() -> new UsernameNotFoundException("Not found: " + userName));
+//
+//        return user.map(MyUserDetails::new).get();
+        return null;
     }
 }
