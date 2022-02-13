@@ -26,10 +26,13 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
-!**/src/main/**/build/
+!**/src/main/**/build/di
 !**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
 
 .env
+
+# TODO - ignore build and node_modules folder
+
