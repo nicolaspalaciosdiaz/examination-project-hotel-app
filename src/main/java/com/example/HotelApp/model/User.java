@@ -6,10 +6,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter//@Data Ska göra allt från @Getter till @ToString, ska testas sen.
+@Setter
 @ToString
 public class User {
     @Id

@@ -1,6 +1,7 @@
 package com.example.HotelApp.repository;
 
 import java.util.List;
+
 import com.example.HotelApp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
