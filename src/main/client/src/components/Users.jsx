@@ -4,17 +4,32 @@ import User from "./User";
 
 function Users() {
     const [users, setUsers] = useState([]);
+    const [hasError, setHasError] = useState(false);
+    const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         axios.get("/api/users")
             .then((response) => {
                 setUsers(response.data);
-            })
-    }, [])
+                setLoading(false);
+            }).catch(err => {
+                setHasError(true);
+                setLoading(false);
+            });
+        }, [])
 
     return <div>
         <ul>
-            { users.map((user) => <User key={user.id} userProp={user} />) }
+            {
+                isLoading ?
+                <div>Laddar...</div> :
+                hasError ?
+                    <div>Något gick fel...</div> :
+                    users.map((user) => {
+                        return <User key={user.id} userProp={user} />
+                    })
+            }
         </ul>
     </div>;
 }
