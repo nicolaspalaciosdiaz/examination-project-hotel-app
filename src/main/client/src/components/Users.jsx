@@ -26,7 +26,7 @@ function Users() {
                 <div>Laddar...</div> :
                 hasError ?
                     <div>Något gick fel...</div> :
-                    users.map((user) => {
+                    users && users.map((user) => {
                         return <User key={user.id} userProp={user} />
                     })
             }
