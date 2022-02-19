@@ -3,7 +3,7 @@ import axios from "axios";
 import User from "./User";
 
 function Users() {
-    const [users, setUsers] = useState(null);
+    const [users, setUsers] = useState([]);
     const [hasError, setHasError] = useState(false);
     const [isLoading, setLoading] = useState(false);
 
@@ -11,6 +11,7 @@ function Users() {
         setLoading(true);
         axios.get("/api/users")
             .then((response) => {
+                console.log("response", response);
                 setUsers(response.data);
                 setLoading(false);
             }).catch(err => {
