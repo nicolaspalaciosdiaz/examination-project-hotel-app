@@ -40,11 +40,47 @@ public class UserController {
         }
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") long id) {
         Optional<User> user = userRepository.findById(id);
         if (user.isPresent()) {
             return new ResponseEntity<>(user.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping("/adduser")
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        try {
+            User saveUser = userRepository
+                    .save(new User(
+                            user.getId(),
+                            user.getFirstName(),
+                            user.getLastName(),
+                            user.getEmail(),
+                            user.getPassword(),
+                            user.getPhoneNumber(),
+                            user.getRole()));
+            return new ResponseEntity<>(saveUser, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PutMapping("/users/{id}")
+    public ResponseEntity<User> updateTutorial(@PathVariable("id") long id, @RequestBody User user) {
+        Optional<User> userData = userRepository.findById(id);
+        if (userData.isPresent()) {
+            User updateUser = userData.get();
+            updateUser.setId(user.getId());
+            updateUser.setFirstName(user.getFirstName());
+            updateUser.setLastName(user.getLastName());
+            updateUser.setEmail(user.getEmail());
+            updateUser.setPassword(user.getPassword());
+            updateUser.setPhoneNumber(user.getPhoneNumber());
+            updateUser.setRole(user.getRole());
+            return new ResponseEntity<>(userRepository.save(updateUser), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
