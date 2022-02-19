@@ -20,7 +20,7 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping("/users")
-    public ResponseEntity<List<User>> getAllUsers(@RequestParam(required = false) String firstName, String lastName) {
+    public ResponseEntity<List<User>> getAllUsers() {
         return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
     }
 
@@ -34,7 +34,7 @@ public class UserController {
         }
     }
 
-    @PostMapping("/adduser")
+    @PostMapping("/users/adduser")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         try {
             User saveUser = userRepository

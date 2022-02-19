@@ -5,20 +5,19 @@ import User from "./User";
 function Users() {
     const [users, setUsers] = useState([]);
     const [hasError, setHasError] = useState(false);
-    const [isLoading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        setLoading(true);
+        setIsLoading(true);
         axios.get("/api/users")
             .then((response) => {
-                console.log("response", response);
                 setUsers(response.data);
-                setLoading(false);
-            }).catch(err => {
+                setIsLoading(false);
+            }).catch((error) => {
                 setHasError(true);
-                setLoading(false);
+                setIsLoading(false);
             });
-        }, [])
+        }, []);
 
     return <div>
         <ul>
