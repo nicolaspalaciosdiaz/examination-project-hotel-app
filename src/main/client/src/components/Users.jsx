@@ -3,7 +3,7 @@ import axios from "axios";
 import User from "./User";
 
 function Users() {
-    const [users, setUsers] = useState([]);
+    const [users, setUsers] = useState(null);
     const [hasError, setHasError] = useState(false);
     const [isLoading, setLoading] = useState(false);
 
@@ -26,7 +26,7 @@ function Users() {
                 <div>Laddar...</div> :
                 hasError ?
                     <div>Något gick fel...</div> :
-                    users && users.map((user) => {
+                    users.map((user) => {
                         return <User key={user.id} userProp={user} />
                     })
             }
