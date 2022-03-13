@@ -1,7 +1,6 @@
 package com.example.HotelApp.controller;
 
 import com.example.HotelApp.model.Booking;
-import com.example.HotelApp.model.User;
 import com.example.HotelApp.repository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
