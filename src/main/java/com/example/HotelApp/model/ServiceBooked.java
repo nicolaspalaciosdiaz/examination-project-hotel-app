@@ -18,5 +18,5 @@ public class ServiceBooked {
     @Column(name = "booking_id")// FK
     private long bookingId;
     @Column(name = "service_id")// FK
-    private long service_id;
+    private long serviceId;
 }
