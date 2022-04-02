@@ -1,0 +1,10 @@
+.body-image-wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.body-bedroom-image, .body-spa-image {
+    height: 100%;
+    width: 100%;
+}

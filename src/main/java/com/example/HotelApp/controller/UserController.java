@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api")
 public class UserController {
@@ -33,6 +33,7 @@ public class UserController {
         }
     }
 
+    //@CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
     @PostMapping("/users/adduser")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         try {
@@ -49,7 +50,6 @@ public class UserController {
         Optional<User> userData = userRepository.findById(id);
         if (userData.isPresent()) {
             User updateUser = userData.get();
-            updateUser.setId(user.getId());
             updateUser.setFirstName(user.getFirstName());
             updateUser.setLastName(user.getLastName());
             updateUser.setEmail(user.getEmail());

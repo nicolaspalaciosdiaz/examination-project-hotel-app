@@ -1,0 +1,31 @@
+.menu-bar {
+    background-color: #184040;
+}
+
+.home-logo {
+    color: #B6B784;
+    text-decoration: none;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    align-content: space-evenly;
+    width: 100%;
+}
+
+.menu li{
+    margin-right: 70px;
+    padding-right: 30px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-wrapper{
+    padding-bottom: 10px;
+}

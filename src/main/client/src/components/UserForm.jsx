@@ -1,24 +1,14 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import User from "./User";
-import Users from "./Users";
 
 function UserForm(props) {
-    /*const [hasError, setHasError] = useState(false);
-
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState(null);
-    const [password, setPassword] = useState('');*/
-
-   // const [isLoading, setIsLoading] = useState(false);
     const [user, setUser] = useState({
         firstName: "",
         lastName: "",
         email: "",
-        phoneNumber: undefined,
+        phoneNumber: 0,
         password: "",
+        role: "",
     });
 
     useEffect(() => {
@@ -36,9 +26,10 @@ function UserForm(props) {
     const onSubmit = (event) => {
         event.preventDefault();
 
-       const result = axios.post("/api/userform", user);
+        let headers = {'content-type': 'application/json'}
 
-       console.log("result", result)
+        const result = axios.post("http://localhost:8080/api/users/adduser", user, {headers});
+        
     }
 
     return (
@@ -90,24 +81,10 @@ function UserForm(props) {
                 />
             </label>
 
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit"/>
 
         </form>
     );
 }
 
 export default UserForm;
-// setState({}); för att tömma formulär
-
-
-/*        return <div>
-            <ul>
-                {
-                    isLoading ?
-                        <div>Laddar...</div> :
-                        hasError ?
-                            <div>Något gick fel...</div> :
-
-                })
-            </ul>
-        </div>;*/
