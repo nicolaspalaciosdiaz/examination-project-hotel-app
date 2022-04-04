@@ -1,0 +1,48 @@
+.spa-sauna-image-and-text-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.spa-spa-image {
+    width: 100%;
+    height: 70vh;
+}
+
+.spa-sauna-image, .spa-sauna-text {
+    margin-top: 10vh;
+}
+
+.spa-sauna-image {
+    padding-left: 10vh;
+    height: 70vh;
+}
+
+.spa-sauna-text {
+    padding-right: 10vh;
+    padding-left: 10vh;
+}
+
+.spa-spa-pool-image-and-text-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.spa-spa-pool-image, .spa-spa-text {
+    margin-top: 10vh;
+}
+
+.spa-spa-pool-image {
+    width: 100%;
+    height: 50vh;
+    width: 95vh;
+    padding-right: 10vh;
+    padding-left: 10vh;
+}
+
+.spa-spa-text {
+    padding-right: 10vh;
+    padding-left: 10vh;
+}
+

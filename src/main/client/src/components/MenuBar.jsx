@@ -10,7 +10,7 @@ const MenuBar = () => {
 
                 <ul className="menu">
                     <li><Link to="/facilities">Anläggningar</Link></li>
-                    <li><Link to="/bookspa">Boka Spa</Link></li>
+                    <li><Link to="/spa">Boka Spa</Link></li>
                     <li><Link to="/bookroom">Boka Rum</Link></li>
                     <li><Link to="/login">Logga In</Link></li>
                 </ul>
