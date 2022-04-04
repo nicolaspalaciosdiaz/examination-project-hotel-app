@@ -1,4 +1,4 @@
-.hotel-room-container {
+.hotel-room-container, .hotel-room-container-two {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

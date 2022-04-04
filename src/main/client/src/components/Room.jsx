@@ -34,7 +34,7 @@ const Room = () => {
                         <img className="room-delux-room" src={deluxRoom} alt="juniorSuiteRoom"/>
                     </div>
                 </div>
-                <div>
+                <div className="hotel-room-container-two">
                     <div>
                         <h1>SUPERIORRUM</h1>
                         <img className="room-superior-room" src={superiorRoom} alt="deluxRoom"/>
