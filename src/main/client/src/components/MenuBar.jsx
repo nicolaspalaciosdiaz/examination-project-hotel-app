@@ -12,7 +12,11 @@ const MenuBar = () => {
                     <li><Link to="/facilities">Anläggningar</Link></li>
                     <li><Link to="/spa">Boka Spa</Link></li>
                     <li><Link to="/bookroom">Boka Rum</Link></li>
-                    <li><Link to="/login">Logga In</Link></li>
+                    {/*if logged in*/}
+                    {/*<li><button onClick={onLogout}>Logout</Link></li>*/}
+
+                    {/*if logged out*/}
+                    <li><Link to="/loginpage">Logga In</Link></li>
                 </ul>
             </div>
         </nav>

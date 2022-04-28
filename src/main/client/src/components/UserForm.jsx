@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from "react";
+import MenuBar from "./MenuBar";
+import Footer from "./Footer";
 import axios from "axios";
 
 function UserForm(props) {
@@ -28,63 +30,83 @@ function UserForm(props) {
 
         let headers = {'content-type': 'application/json'}
 
-        const result = axios.post("http://localhost:8080/api/users/adduser", user, {headers});
-        
+        const result = axios.post("/api/users/adduser", user, {headers});
+
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <label>
-                First Name:
-                <input
-                    name="firstName"
-                    type="text"
-                    value={user.firstName}
-                    onChange={e => onChange(e)}
-                    placeholder="Förnamn"
-                />
-            </label>
-            <label>
-                Last Name:
-                <input
-                    name="lastName"
-                    type="text"
-                    value={user.lastName}
-                    onChange={e => onChange(e)}
-                />
-            </label>
-            <label>
-                Email:
-                <input
-                    name="email"
-                    type="email"
-                    value={user.email}
-                    onChange={e => onChange(e)}
-                />
-            </label>
-            <label>
-                Phone number:
-                <input
-                    name="phoneNumber"
-                    type="number"
-                    value={user.phoneNumber}
-                    onChange={e => onChange(e)}
-                />
-            </label>
-            <label>
-                Password:
-                <input
-                    name="password"
-                    type="password"
-                    value={user.password}
-                    onChange={e => onChange(e)}
-                />
-            </label>
+        <React.Fragment>
+            <MenuBar/>
+            <form onSubmit={onSubmit}>
+                <div>
+                    <label>
+                        First Name:
+                        <input
+                            name="firstName"
+                            type="text"
+                            value={user.firstName}
+                            onChange={e => onChange(e)}
+                            placeholder="FÖRNAMN"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Last Name:
+                        <input
+                            name="lastName"
+                            type="text"
+                            value={user.lastName}
+                            onChange={e => onChange(e)}
+                            placeholder="EFTERNAMN"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Email:
+                        <input
+                            name="email"
+                            type="email"
+                            value={user.email}
+                            onChange={e => onChange(e)}
+                            placeholder="EMAIL"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Phone number:
+                        <input
+                            name="phoneNumber"
+                            type="number"
+                            value={user.phoneNumber}
+                            onChange={e => onChange(e)}
+                        />
+                    </label>
+                </div>
 
-            <input type="submit" value="Submit"/>
-
-        </form>
+                {/*Todo att lägga till födelsedatum*/}
+                <div>
+                    <label>
+                        Password:
+                        <input
+                            name="password"
+                            type="password"
+                            value={user.password}
+                            onChange={e => onChange(e)}
+                            placeholder="LÖSENORD"
+                        />
+                    </label>
+                </div>
+                <div>
+                <input type="submit" value="BLI MEDLEM"/>
+                </div>
+            </form>
+            <Footer/>
+        </React.Fragment>
     );
 }
 
 export default UserForm;
+

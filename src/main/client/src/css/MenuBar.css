@@ -10,7 +10,7 @@
 .menu {
     list-style-type: none;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: flex-end;
     align-content: space-evenly;
     width: 100%;

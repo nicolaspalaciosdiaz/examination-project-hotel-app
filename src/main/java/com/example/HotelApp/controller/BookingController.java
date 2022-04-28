@@ -1,7 +1,9 @@
 package com.example.HotelApp.controller;
 
 import com.example.HotelApp.model.Booking;
+import com.example.HotelApp.model.User;
 import com.example.HotelApp.repository.BookingRepository;
+import com.example.HotelApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,19 +14,32 @@ import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/bookings/")
 public class BookingController {
 
     @Autowired
     BookingRepository bookingRepository;
 
-    @GetMapping("/bookings")
+    @Autowired
+    UserRepository userRepository;
+
+    @GetMapping("allbookings")
     public ResponseEntity<List<Booking>> getAllBookings() {
         return new ResponseEntity<>(bookingRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/bookings/{id}")
-    public ResponseEntity<Booking> getBookingById(@PathVariable("id") long id) {
+    @GetMapping("getbookingsfromuser/{id}")
+    public ResponseEntity<List<Booking>>getBookingsFromUser(@PathVariable("id") Long id){
+
+        // Hämta user
+        Optional<User> user = userRepository.findById(id);
+
+        //hämtar listan från user
+        return new ResponseEntity<>(user.get().getBookingList(),HttpStatus.OK);
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity<Booking> getBookingById(@PathVariable("id") Long id) {
         Optional<Booking> booking = bookingRepository.findById(id);
         if (booking.isPresent()) {
             return new ResponseEntity<>(booking.get(), HttpStatus.OK);
@@ -33,18 +48,23 @@ public class BookingController {
         }
     }
 
-    @PostMapping("/bookings/addbooking")
-    public ResponseEntity<Booking> createBooking(@RequestBody Booking booking) {
+    @PostMapping("addbookingtouser/{id}")
+    public ResponseEntity<Booking> addBookingToUser(@RequestBody Booking booking, @PathVariable("id") Long id) {
+
+        // Hämta användare genom id
+        Optional<User> user = userRepository.findById(id);
         try {
+            user.get().getBookingList().add(booking);
             bookingRepository.save(booking);
+            userRepository.save(user.get());
             return new ResponseEntity<>(booking, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @PutMapping("/bookings/{id}")
-    public ResponseEntity<Booking> updateBooking(@PathVariable("id") long id, @RequestBody Booking booking) {
+    @PutMapping("{id}")
+    public ResponseEntity<Booking> updateBooking(@PathVariable("id") Long id, @RequestBody Booking booking) {
         Optional<Booking> bookingData = bookingRepository.findById(id);
         if (bookingData.isPresent()) {
             Booking updateBooking = bookingData.get();
@@ -60,8 +80,8 @@ public class BookingController {
         }
     }
 
-    @DeleteMapping("/bookings/{id}")
-    public ResponseEntity<HttpStatus> deleteBooking(@PathVariable("id") long id) {
+    @DeleteMapping("{id}")
+    public ResponseEntity<HttpStatus> deleteBooking(@PathVariable("id") Long id) {
         try {
             bookingRepository.deleteById(id);
             return new ResponseEntity<>(HttpStatus.GONE);

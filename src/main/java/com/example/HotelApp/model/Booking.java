@@ -3,8 +3,10 @@ package com.example.HotelApp.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "booking")
@@ -18,10 +20,10 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(name = "user_id")// FK
-    private long userId;
+//    @Column(name = "user_id")// FK
+//    private long userId;
     @Column(name = "date_created")
-    private LocalDateTime dateCreated = LocalDateTime.now();
+    private LocalDate dateCreated = LocalDate.now();
     @Column(name = "start_date")
     private String startDate;
     @Column(name = "end_date")
@@ -34,4 +36,8 @@ public class Booking {
     private double priceFinal;
     @Column(name = "canceled")
     private boolean canceled;
+
+    @ManyToOne
+    private User user;
+
 }
