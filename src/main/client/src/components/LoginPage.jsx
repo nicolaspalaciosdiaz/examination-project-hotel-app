@@ -9,21 +9,23 @@ function LoginPage(props) {
         email: "",
         password: "",
         successMessage: null
-    })
+    });
+
     const handleChange = (e) => {
         const {id, value} = e.target
         setState(prevState => ({
             ...prevState,
             [id]: value
         }))
-    }
+    };
 
     const handleSubmitClick = (e) => {
         e.preventDefault();
         const payload = {
             "email": state.email,
             "password": state.password,
-        }
+        };
+
         axios.post("http://localhost:3000/loginpage", payload)
             .then(function (response) {
                 if (response.status === 200) {
@@ -41,7 +43,7 @@ function LoginPage(props) {
             .catch(function (error) {
                 console.log(error);
             });
-    }
+    };
 
     return (
         <React.Fragment>
@@ -69,7 +71,7 @@ function LoginPage(props) {
                         {/* Todo Glömt lösne ska bytas till länk*/}
                         <h1>GLÖMT LÖSENORD</h1>
                     </form>
-                    <Link to="/userform" className="btn btn-userform">BLI MEDELM</Link>
+                    <Link to="/register" className="btn btn-userform">BLI MEDELM</Link>
 
                     <Link to="/">TILLBAKA</Link>
                 </div>

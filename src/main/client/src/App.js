@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import HomePage from "./components/HomePage";
 import Facilities from "./components/Facilities";
 import DashboardAdmin from "./components/DashboardAdmin";
-import UserForm from "./components/UserForm";
+import Register from "./components/Register";
 import Spa from "./components/Spa";
 import Room from "./components/Room"
 import LoginPage from "./components/LoginPage";
@@ -20,7 +20,7 @@ function App() {
                     <Route exact path="/bookroom" element={<Room/>}/>
                     <Route exact path="loginpage" element={<LoginPage/>}/>
                     <Route exact path="/dashboardadmin" element={<DashboardAdmin/>}/>
-                    <Route exact path="/userform" element={<UserForm/>}/>
+                    <Route exact path="/register" element={<Register/>}/>
                 </Routes>
             </div>
         </Router>

@@ -7,6 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,10 +36,18 @@ public class UserController {
         }
     }
 
-    //@CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
     @PostMapping("/users/adduser")
     public ResponseEntity<User> createUser(@RequestBody User user) {
+
         try {
+            //userRepository.getById(user.getId());
+
+//            LocalDate birthDate = user.getDateOfBirth();
+//
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+//            sdf.format(birthDate);
+
+
             User saveUser = userRepository
                     .save(user);
             return new ResponseEntity<>(saveUser, HttpStatus.CREATED);
