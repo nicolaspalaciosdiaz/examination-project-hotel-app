@@ -23,18 +23,35 @@ public class UserController {
 
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUsers() {
+
         return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("/users/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable("id") long id) {
+    public ResponseEntity<User> getUserById(@PathVariable("id") Long id) {
+
         Optional<User> user = userRepository.findById(id);
+
         if (user.isPresent()) {
             return new ResponseEntity<>(user.get(), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+// ------------------------------>
+//    @GetMapping("/users/{id}/email")
+//    public ResponseEntity<String> getUserEmail(@PathVariable("id") Long id) {
+//
+//        Optional<User> user = Optional.of(userRepository.getById(id));
+//
+//        user.get().getEmail();
+//
+//        if (user.isPresent()) {
+//            return new ResponseEntity<>(user.get().getEmail(), HttpStatus.OK);
+//        } else {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
 
     @PostMapping("/users/adduser")
     public ResponseEntity<User> createUser(@RequestBody User user) {

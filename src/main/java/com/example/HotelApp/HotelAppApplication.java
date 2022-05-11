@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.time.LocalDate;
 
-@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+@SpringBootApplication
 @EnableJpaRepositories(basePackageClasses = UserRepository.class)
 public class HotelAppApplication {
 
@@ -35,7 +35,7 @@ public class HotelAppApplication {
                     "Svensson",
                     LocalDate.of(1979, 6, 19),
                     "tony@svensson.se",
-                    "13pLasd0!",
+                    "$2a$12$3Te1EgUhuE5yQ0jexeWhpO.JFH.drOZpAnwZ3v8x/TDZkWOR3NhO6",
                     78099543,
                     "USER"
             ));
@@ -57,8 +57,19 @@ public class HotelAppApplication {
                     73557747,
                     "USER"
             ));
+            userRepository.save(new User(
+                    "Admin",
+                    "Adminsson",
+                    LocalDate.of(1989, 2, 8),
+                    "admin@adminsson.se",
+                    "MlkH8276",
+                    73557747,
+                    "ADMIN"
+            ));
         };
     }
 }
 
 //extends SpringBootServletInitializer
+//@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+

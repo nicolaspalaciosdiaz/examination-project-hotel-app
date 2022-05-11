@@ -1,4 +1,4 @@
-package com.example.HotelApp;
+package com.example.HotelApp.configurations;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.*;
