@@ -13,8 +13,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.time.LocalDate;
 
+
+//@EnableJpaRepositories(basePackageClasses = UserRepository.class)
 @SpringBootApplication
-@EnableJpaRepositories(basePackageClasses = UserRepository.class)
+@EnableJpaRepositories
 public class HotelAppApplication {
 
     public static void main(String[] args) {
@@ -27,47 +29,52 @@ public class HotelAppApplication {
     @Autowired
     BookingRepository bookingRepository;
 
-    @Bean
-    CommandLineRunner run() throws Exception {
-        return args -> {
-            userRepository.save(new User(
-                    "Tony",
-                    "Svensson",
-                    LocalDate.of(1979, 6, 19),
-                    "tony@svensson.se",
-                    "$2a$12$3Te1EgUhuE5yQ0jexeWhpO.JFH.drOZpAnwZ3v8x/TDZkWOR3NhO6",
-                    78099543,
-                    "USER"
-            ));
-            userRepository.save(new User(
-                    "Angelica",
-                    "Hermansson",
-                    LocalDate.of(1989, 8, 29),
-                    "angelica@hermansson.se",
-                    "PlK0076bt",
-                    70923498,
-                    "USER"
-            ));
-            userRepository.save(new User(
-                    "Kristian",
-                    "Eriksson",
-                    LocalDate.of(1979, 6, 19),
-                    "kristian@eriksson.se",
-                    "MnI9673lm",
-                    73557747,
-                    "USER"
-            ));
-            userRepository.save(new User(
-                    "Admin",
-                    "Adminsson",
-                    LocalDate.of(1989, 2, 8),
-                    "admin@adminsson.se",
-                    "MlkH8276",
-                    73557747,
-                    "ADMIN"
-            ));
-        };
-    }
+//    @Bean
+//    CommandLineRunner run() throws Exception {
+//        return args -> {
+//            userRepository.save(new User(
+//                    "ts",
+//                    "Tony",
+//                    "Svensson",
+//                    LocalDate.of(1979, 6, 19),
+//                    "tony@svensson.se",
+//                    "$2a$12$3Te1EgUhuE5yQ0jexeWhpO.JFH.drOZpAnwZ3v8x/TDZkWOR3NhO6",
+//                    78099543L,
+//                    true
+//
+//            ));
+//            userRepository.save(new User(
+//                    "ah",
+//                    "Angelica",
+//                    "Hermansson",
+//                    LocalDate.of(1989, 8, 29),
+//                    "angelica@hermansson.se",
+//                    "PlK0076bt",
+//                    70923498L,
+//                    true
+//            ));
+//            userRepository.save(new User(
+//                    "ke",
+//                    "Kristian",
+//                    "Eriksson",
+//                    LocalDate.of(1979, 6, 19),
+//                    "kristian@eriksson.se",
+//                    "MnI9673lm",
+//                    73557747L,
+//                    true
+//            ));
+//            userRepository.save(new User(
+//                    "aa",
+//                    "Admin",
+//                    "Adminsson",
+//                    LocalDate.of(1989, 2, 8),
+//                    "admin@adminsson.se",
+//                    "MlkH8276",
+//                    73557747L,
+//                    true
+//            ));
+//        };
+//    }
 }
 
 //extends SpringBootServletInitializer

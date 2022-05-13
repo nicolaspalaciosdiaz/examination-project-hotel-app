@@ -1,5 +1,7 @@
 package com.example.HotelApp.service;
 
+//import com.example.HotelApp.model.MyUserPrincipal;
+
 import com.example.HotelApp.model.MyUserPrincipal;
 import com.example.HotelApp.model.User;
 import com.example.HotelApp.repository.UserRepository;
@@ -9,8 +11,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 
@@ -18,13 +18,14 @@ public class MyUserDetailsService implements UserDetailsService {
     private UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 
-        Optional<User> user = Optional.ofNullable(userRepository.findUserByEmail(email));
+        User user = userRepository.getUserByUserName(userName);
 
-        user.orElseThrow(() -> new UsernameNotFoundException("Not found " + email));
-
-        return user.map(MyUserPrincipal::new).get();
+        if (user == null){
+            throw new UsernameNotFoundException("Kunde inte hitta användaren");
+        }
+        return new MyUserPrincipal(user);
     }
 }
 

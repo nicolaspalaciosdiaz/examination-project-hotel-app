@@ -1,43 +1,22 @@
 package com.example.HotelApp.model;
 
-import com.example.HotelApp.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.time.LocalDate;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Set;
 
 public class MyUserPrincipal implements UserDetails {
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private LocalDate dateOfBirth;
-    private String email;
-    private String password;
-    private Long phoneNumber;
-    private String role;
-    private List<Booking>bookingList;
 
-    private List<GrantedAuthority> authorities;
+    @Autowired
+    private User user;
 
     public MyUserPrincipal(User user) {
-        this.id = user.getId();
-        this.firstName = user.getFirstName();
-        this.lastName = user.getLastName();
-        this.dateOfBirth = user.getDateOfBirth();
-        this.email = user.getEmail();
-        this.password = user.getPassword();
-        this.phoneNumber = user.getPhoneNumber();
-        this.role = user.getRole();
-        this.bookingList = user.getBookingList();
-        this.authorities = Arrays.stream(user.getRole().split(","))
-                .map(SimpleGrantedAuthority::new)
-                .collect(Collectors.toList());
-
+        this.user = user;
     }
 
     public MyUserPrincipal() {
@@ -45,17 +24,22 @@ public class MyUserPrincipal implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        Set<Roles> roles = user.getRoles();
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        for (Roles role: roles) {
+            authorities.add(new SimpleGrantedAuthority(role.getName()));
+        }
         return authorities;
     }
 
     @Override
     public String getPassword() {
-        return password;
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return email;
+        return user.getUserName();
     }
 
     @Override
@@ -75,8 +59,7 @@ public class MyUserPrincipal implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return user.getEnabled();
     }
 }
 
-// Sätta checkar på override metoderna

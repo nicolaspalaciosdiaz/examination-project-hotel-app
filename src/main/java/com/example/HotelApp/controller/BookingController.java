@@ -7,6 +7,7 @@ import com.example.HotelApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,6 +24,7 @@ public class BookingController {
     @Autowired
     UserRepository userRepository;
 
+//    @PreAuthorize("ADMIN")
     @GetMapping("allbookings")
     public ResponseEntity<List<Booking>> getAllBookings() {
         return new ResponseEntity<>(bookingRepository.findAll(), HttpStatus.OK);
@@ -31,16 +33,16 @@ public class BookingController {
     @GetMapping("getbookingsfromuser/{id}")
     public ResponseEntity<List<Booking>>getBookingsFromUser(@PathVariable("id") Long id){
 
-        // Hämta user
         Optional<User> user = userRepository.findById(id);
 
-        //hämtar listan från user
         return new ResponseEntity<>(user.get().getBookingList(),HttpStatus.OK);
     }
 
     @GetMapping("{id}")
     public ResponseEntity<Booking> getBookingById(@PathVariable("id") Long id) {
+
         Optional<Booking> booking = bookingRepository.findById(id);
+
         if (booking.isPresent()) {
             return new ResponseEntity<>(booking.get(), HttpStatus.OK);
         } else {
@@ -65,7 +67,9 @@ public class BookingController {
 
     @PutMapping("{id}")
     public ResponseEntity<Booking> updateBooking(@PathVariable("id") Long id, @RequestBody Booking booking) {
+
         Optional<Booking> bookingData = bookingRepository.findById(id);
+
         if (bookingData.isPresent()) {
             Booking updateBooking = bookingData.get();
             updateBooking.setStartDate(booking.getStartDate());
@@ -82,6 +86,7 @@ public class BookingController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<HttpStatus> deleteBooking(@PathVariable("id") Long id) {
+
         try {
             bookingRepository.deleteById(id);
             return new ResponseEntity<>(HttpStatus.GONE);

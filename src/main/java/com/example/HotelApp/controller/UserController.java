@@ -40,7 +40,7 @@ public class UserController {
     }
 // ------------------------------>
 //    @GetMapping("/users/{id}/email")
-//    public ResponseEntity<String> getUserEmail(@PathVariable("id") Long id) {
+//    public ResponseEntity<String> getUserByEmail(@PathVariable("id") Long id) {
 //
 //        Optional<User> user = Optional.of(userRepository.getById(id));
 //
@@ -83,7 +83,7 @@ public class UserController {
             updateUser.setEmail(user.getEmail());
             updateUser.setPassword(user.getPassword());
             updateUser.setPhoneNumber(user.getPhoneNumber());
-            updateUser.setRole(user.getRole());
+            updateUser.setEnabled(user.getEnabled());
             return new ResponseEntity<>(userRepository.save(updateUser), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
