@@ -69,4 +69,7 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.enabled = enabled;
     }
+
+    public User(String username, String email, String encode) {
+    }
 }
