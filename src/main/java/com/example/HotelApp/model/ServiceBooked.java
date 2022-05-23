@@ -13,7 +13,7 @@ import javax.persistence.*;
 @ToString
 public class ServiceBooked {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "booking_id")// FK
     private long bookingId;

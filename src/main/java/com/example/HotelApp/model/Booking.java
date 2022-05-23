@@ -16,12 +16,16 @@ import java.util.List;
 @Setter
 @ToString
 public class Booking {
-    static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-//    @Column(name = "user_id")// FK
-//    private long userId;
+    @Column(name = "user_id")
+    private long userId;
+
+    @Column(name = "service_id")
+    private long serviceId;
+
     @Column(name = "date_created")
     private LocalDate dateCreated = LocalDate.now();
     @Column(name = "start_date")
@@ -36,8 +40,10 @@ public class Booking {
     private double priceFinal;
     @Column(name = "canceled")
     private boolean canceled;
-
-    @ManyToOne
-    private User user;
+//
+//    @ManyToOne
+//    private User user;
 
 }
+
+//    static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");

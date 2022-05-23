@@ -38,33 +38,11 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-// ------------------------------>
-//    @GetMapping("/users/{id}/email")
-//    public ResponseEntity<String> getUserByEmail(@PathVariable("id") Long id) {
-//
-//        Optional<User> user = Optional.of(userRepository.getById(id));
-//
-//        user.get().getEmail();
-//
-//        if (user.isPresent()) {
-//            return new ResponseEntity<>(user.get().getEmail(), HttpStatus.OK);
-//        } else {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//    }
 
     @PostMapping("/users/adduser")
     public ResponseEntity<User> createUser(@RequestBody User user) {
 
         try {
-            //userRepository.getById(user.getId());
-
-//            LocalDate birthDate = user.getDateOfBirth();
-//
-//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-//            sdf.format(birthDate);
-
-
             User saveUser = userRepository
                     .save(user);
             return new ResponseEntity<>(saveUser, HttpStatus.CREATED);

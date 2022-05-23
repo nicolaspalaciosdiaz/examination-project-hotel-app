@@ -75,6 +75,16 @@ function Register(props) {
 
         const result = axios.post("/api/users/adduser", user, {headers});
 
+        setUser({
+            firstName: "",
+            lastName: "",
+            dateOfBirth: null,
+            email: "",
+            phoneNumber: 0,
+            password: "",
+            role: "",
+        });
+
     }
 
     useEffect(() => {
@@ -88,37 +98,34 @@ function Register(props) {
             <form onSubmit={onSubmit}>
                 <div>
                     <label>
-                        First Name:
+                        Förnamn:
                         <input
                             name="firstName"
                             type="text"
                             value={user.firstName}
                             onChange={e => onChange(e)}
-                            placeholder="FÖRNAMN"
                         />
                     </label>
                 </div>
                 <div>
                     <label>
-                        Last Name:
+                        Efternamn:
                         <input
                             name="lastName"
                             type="text"
                             value={user.lastName}
                             onChange={e => onChange(e)}
-                            placeholder="EFTERNAMN"
                         />
                     </label>
                 </div>
                 <div>
                     <label>
-                        Birthday:
+                        Födelsedatum (YYYY-MM-DD):
                         <input
                             name="birthday"
-                            type="date"
+                            type="input"
                             value={user.dateOfBirth}
                             onChange={e => onChange(e)}
-                            placeholder="FÖDELSEDAG"
                         />
                     </label>
                 </div>
@@ -130,13 +137,12 @@ function Register(props) {
                             type="email"
                             value={user.email}
                             onChange={e => onChange(e)}
-                            placeholder="EMAIL"
                         />
                     </label>
                 </div>
                 <div>
                     <label>
-                        Phone number:
+                        Telefonnummer:
                         <input
                             name="phoneNumber"
                             type="number"
@@ -145,17 +151,14 @@ function Register(props) {
                         />
                     </label>
                 </div>
-
-                {/*Todo att lägga till födelsedatum*/}
                 <div>
                     <label>
-                        Password:
+                        Lösenord:
                         <input
                             name="password"
                             type="password"
                             value={user.password}
                             onChange={e => onChange(e)}
-                            placeholder="LÖSENORD"
                         />
                     </label>
                 </div>
