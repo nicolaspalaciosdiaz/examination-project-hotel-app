@@ -2,10 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import MenuBar from "./MenuBar";
 import Footer from "./Footer";
 import axios from "axios";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
 import {isEmail} from "validator";
-import AuthService from "../services/auth.service";
 
 const required = value => {
     if (!value) {
@@ -52,6 +49,7 @@ function Register(props) {
     const checkBtn = useRef();
 
     const [user, setUser] = useState({
+        userName : "",
         firstName: "",
         lastName: "",
         dateOfBirth: null,
@@ -76,9 +74,10 @@ function Register(props) {
         const result = axios.post("/api/users/adduser", user, {headers});
 
         setUser({
+            userName: "",
             firstName: "",
             lastName: "",
-            dateOfBirth: null,
+            dateOfBirth: "",
             email: "",
             phoneNumber: 0,
             password: "",
@@ -96,6 +95,17 @@ function Register(props) {
         <React.Fragment>
             <MenuBar/>
             <form onSubmit={onSubmit}>
+                <div>
+                    <label>
+                        Användarnamn:
+                        <input
+                            name="userName"
+                            type="text"
+                            value={user.userName}
+                            onChange={e => onChange(e)}
+                        />
+                    </label>
+                </div>
                 <div>
                     <label>
                         Förnamn:

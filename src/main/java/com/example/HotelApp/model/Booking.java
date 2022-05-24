@@ -23,8 +23,9 @@ public class Booking {
     @Column(name = "user_id")
     private long userId;
 
+
     @Column(name = "service_id")
-    private long serviceId;
+    private Long serviceId;
 
     @Column(name = "date_created")
     private LocalDate dateCreated = LocalDate.now();
@@ -40,10 +41,5 @@ public class Booking {
     private double priceFinal;
     @Column(name = "canceled")
     private boolean canceled;
-//
-//    @ManyToOne
-//    private User user;
 
 }
-
-//    static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");

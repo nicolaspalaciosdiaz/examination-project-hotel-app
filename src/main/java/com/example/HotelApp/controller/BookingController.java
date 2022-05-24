@@ -61,12 +61,43 @@ public class BookingController {
         }
     }
 
+//    @PostMapping("addbookingtouser/{serviceId}/{id}")
+//    public ResponseEntity<Booking> addBookingToUser(@RequestBody Booking booking, @PathVariable("id") Long id) {
+//
+//        Optional<User> user = userRepository.findById(id);
+//
+//        Service service = serviceRepository.findById(1L).get();
+//
+//        try {
+//            booking.setUserId(user.get().getId());
+//
+//            Booking booked = bookingRepository.save(booking);
+//
+//            user.get().getBookingList().add(booked);
+//
+//            userRepository.save(user.get());
+//
+//            ServiceBooked serviceId = new ServiceBooked();
+//
+//            serviceId.setServiceId(service.getId());
+//
+//            serviceId.setBookingId(booking.getId());
+//
+//            serviceBookedRepository.save(serviceId);
+//
+//            return new ResponseEntity<>(booking, HttpStatus.CREATED);
+//        } catch (Exception e) {
+//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
+
+//    Metod som kopplar booking och service via service booked.
     @PostMapping("addbookingtouser/{serviceId}/{id}")
-    public ResponseEntity<Booking> addBookingToUser(@RequestBody Booking booking, @PathVariable("id") Long id) {
+    public ResponseEntity<Booking> addBookingToUser(@RequestBody Booking booking, @PathVariable("id") Long id, @PathVariable("serviceId")Long serviceId) {
 
         Optional<User> user = userRepository.findById(id);
 
-        Service service = serviceRepository.findById(1L).get();
+        Service service = serviceRepository.findById(serviceId).get();
 
         try {
             booking.setUserId(user.get().getId());
@@ -77,13 +108,13 @@ public class BookingController {
 
             userRepository.save(user.get());
 
-            ServiceBooked serviceId = new ServiceBooked();
+            ServiceBooked serviceBooked = new ServiceBooked();
 
-            serviceId.setServiceId(service.getId());
+            serviceBooked.setServiceId(service.getId());
 
-            serviceId.setBookingId(booking.getId());
+            serviceBooked.setBookingId(booking.getId());
 
-            serviceBookedRepository.save(serviceId);
+            serviceBookedRepository.save(serviceBooked);
 
             return new ResponseEntity<>(booking, HttpStatus.CREATED);
         } catch (Exception e) {
