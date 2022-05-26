@@ -10,8 +10,7 @@ const MenuBar = () => {
 
                 <ul className="menu">
                     <li><Link to="/facilities">Anläggningar</Link></li>
-                    <li><Link to="/spa">Boka Spa</Link></li>
-                    <li><Link to="/bookroom">Boka Rum</Link></li>
+                    <li><Link to="/services">Boka Service</Link></li>
                     {/*if logged in*/}
                     {/*<li><button onClick={onLogout}>Logout</Link></li>*/}
 

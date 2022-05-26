@@ -91,7 +91,7 @@ public class BookingController {
 //        }
 //    }
 
-//    Metod som kopplar booking och service via service booked.
+
     @PostMapping("addbookingtouser/{serviceId}/{id}")
     public ResponseEntity<Booking> addBookingToUser(@RequestBody Booking booking, @PathVariable("id") Long id, @PathVariable("serviceId")Long serviceId) {
 

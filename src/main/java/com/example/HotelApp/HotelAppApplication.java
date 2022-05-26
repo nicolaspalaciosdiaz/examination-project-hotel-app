@@ -102,7 +102,32 @@ public class HotelAppApplication {
                     1
             ));
             serviceRepository.save(new Service(
-                    "luxury room",
+                    "single room",
+                    1,
+                    2000,
+                    1
+            ));
+
+            serviceRepository.save(new Service(
+                    "double room",
+                    1,
+                    2000,
+                    1
+            ));
+            serviceRepository.save(new Service(
+                    "deluxe room",
+                    1,
+                    2000,
+                    1
+            ));
+            serviceRepository.save(new Service(
+                    "superior room",
+                    1,
+                    2000,
+                    1
+            ));
+            serviceRepository.save(new Service(
+                    "superior suite",
                     1,
                     2000,
                     1
