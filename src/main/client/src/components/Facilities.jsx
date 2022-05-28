@@ -21,7 +21,7 @@ const Facilities = () => {
             <div className="facility-workingOut-image-and-text-container">
                 <div className="facility-workingOut-image-description">
                     <p>
-                        Vi på Project Hotels anser att regelbunden träning är viktigt. Och vi vet att många av våra
+                        Vi på Hotel Project anser att regelbunden träning är viktigt. Och vi vet att många av våra
                         gäster gärna spenderar en tid på träning. Som gäst hos oss har du därför tillgång till vårat två
                         våningsgym utan extra kostnad. Hos oss kan du köra intensiva pass med vänner eller varför inte
                         en av våra personliga tränare?

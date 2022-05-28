@@ -9,7 +9,7 @@ const MenuBar = () => {
                 <Link to="/" className="home-logo">Hotel Project</Link>
 
                 <ul className="menu">
-                    <li><Link to="/facilities">Anläggningar</Link></li>
+                    <li><Link to="/facilities">Gym</Link></li>
                     <li><Link to="/services">Boka Service</Link></li>
                     {/*if logged in*/}
                     {/*<li><button onClick={onLogout}>Logout</Link></li>*/}
