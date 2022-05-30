@@ -11,24 +11,35 @@ const HomePage = () => {
         <React.Fragment>
             <MenuBar/>
             <Header/>
-            <div>
+            <main className="home-page">
                 <div className="body-bedroom-image-wrapper">
-                    <h1>Lyx omdefineras</h1>
-                    <p>Våra bekväma och rymliga rum. Omsorgsfullt inredd från 25 kvm. Här finns rum för att koppla av
-                        och allt det där andra. vila ut i den sköna dubbelsängen på 200 cm eller slappna av i soffan och
+                    <br/>
+                    <h1 className="homepage-h1-redefine-luxury">Lyx omdefineras</h1>
+                    <br/>
+                    <p className="homepage-text-description">Våra bekväma och rymliga rum. Omsorgsfullt inredd från 25
+                        kvm. Här finns rum för att koppla av
+                        och allt det där andra.
+                        <br/> vila ut i den sköna dubbelsängen på 200 cm eller slappna av i soffan och
                         njut av utsikten över trädgården och vattnet.</p>
+                    <br/>
+                    <br/>
                     <img className="body-bedroom-image" src={bedroomImage} alt="image"/>
                 </div>
+                <br/>
+                <br/>
                 <div>
                     <div className="body-spa-image-wrapper">
-                        <h1>Lämna dina bekymmer</h1>
-                        <p>Spa och avkoppling för att göra dagen perfekt. Njut av en klassik massage, få en
+                        <h1 className="homepage-leave-your-worries">Lämna dina bekymmer</h1>
+                        <br/>
+                        <p className="homepage-spa-text">Spa och avkoppling för att göra dagen perfekt. <br/> Njut av en klassik massage, få en
                             skönhetsbehandling, eller gå till vårat gym och utmana dig själv.</p>
+                        <br/>
+                        <br/>
                         <img className="body-spa-image" src={sauna} alt="image"/>
                     </div>
                 </div>
                 <Footer/>
-            </div>
+            </main>
         </React.Fragment>
     )
 }

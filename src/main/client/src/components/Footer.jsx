@@ -1,41 +1,29 @@
 import React from "react";
-//import "../css/Footer.css;";
-import {Link} from "react-router-dom";
-
-function Column(props) {
-    return null;
-}
+import "../css/Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <div className="footer-container">
-            <div className="footer-hotel-info">
-                <h1>Hotel Project</h1>
+        <footer className="footer">
+            <div className="footer-block">
+                <h4>Hotel Project</h4>
                 <p>Abc gatan, Stockholm, Sverige</p>
                 <p>08-8798675</p>
-                <Link to="/mail">hotelproject@gmail.com</Link>
+                <Link className="footer-link" to="/mail">hotelproject@gmail.com</Link>
             </div>
-            <div className="footer-about-contact-terms-and-agreement-container">
-                <div>
-                    <Link to="/about">Om oss</Link>
-                </div>
-                <div>
-                    <Link to="/contact">Kontakt</Link>
-                </div>
-                <div>
-                    <Link to="/termsandcondition">Förhållande och villkor</Link>
-                </div>
+
+            <div className="footer-block">
+                <Link to="/aboutus">Om oss</Link>
+                <Link to="/contactus">Kontakt</Link>
+                <Link to="/termsandcondition">Förhållande och villkor</Link>
             </div>
-            <div className="footer-social-media-container">
+
+            <div className="footer-block">
                 <Link to="/facebook">FaceBook</Link>
                 <Link to="/twitter">Twitter</Link>
                 <Link to="/instagram">Instagram</Link>
             </div>
-        </div>
+        </footer>
     );
 };
-
 export default Footer;
-
-//Todo att skapa alla länkingar på den här sidan.
-// Ta in css och ikoner

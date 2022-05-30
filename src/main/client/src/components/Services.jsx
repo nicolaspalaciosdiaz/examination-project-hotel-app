@@ -6,7 +6,7 @@ import superiorRoom from "../images/superiorroom.jpg"
 import superiorJuniorsuiteRoom from "../images/superiorjuniorsuite.jpg"
 import MenuBar from "./MenuBar";
 import Footer from "./Footer";
-import "../css/Room.css";
+import "../css/Services.css";
 import axios from "axios";
 
 function Services() {
@@ -44,9 +44,9 @@ function Services() {
                 "x-access-token": "token-value"
             }
         }).then((response) => {
-                console.log(response)
+            console.log(response)
 
-            }).catch((error) => {
+        }).catch((error) => {
             setHasError(true);
 
         });
@@ -55,6 +55,7 @@ function Services() {
     return (
         <React.Fragment>
             <MenuBar/>
+            <main className="services-page">
             {
                 isLoading ?
                     <div>Laddar...</div> :
@@ -67,6 +68,7 @@ function Services() {
                             </div>
                         })
             }
+
 
             {/*<div>*/}
             {/*    <h1>VÅRA RUM</h1>*/}
@@ -105,6 +107,8 @@ function Services() {
             {/*        </div>*/}
             {/*    </div>*/}
             {/*</div>*/}
+            {/*<div className="service-footer">*/}
+            </main>
             <Footer/>
         </React.Fragment>
     );

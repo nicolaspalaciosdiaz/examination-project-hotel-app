@@ -1,10 +1,30 @@
+.home-page {
+    min-height: 80vh;
+}
+
 .body-image-wrapper {
     display: flex;
     height: 100%;
     width: 100%;
 }
 
+.homepage-h1-redefine-luxury {
+    color: #B6B784;
+}
+
+.homepage-text-description {
+    color: #004933;
+}
+
 .body-bedroom-image, .body-spa-image {
-    height: 100%;
-    width: 100%;
+    height: 60%;
+    width: 70%;
+}
+
+.homepage-leave-your-worries {
+    color: #004933;
+}
+
+.homepage-spa-text {
+    color: #004933;
 }

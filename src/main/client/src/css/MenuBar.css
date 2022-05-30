@@ -1,31 +1,29 @@
 .menu-bar {
-    background-color: #184040;
+    display: flex;
+    justify-content: space-between;
+    background-color: #215454;
+    padding: 30px;
 }
 
-.home-logo {
+.menu-bar-logo {
     color: #B6B784;
     text-decoration: none;
 }
 
-.menu {
-    list-style-type: none;
+.menu-bar-logo:hover {
+    opacity: 0.8;
+}
+
+.menu-bar-links {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    align-content: space-evenly;
-    width: 100%;
+    list-style: none;
+    color: #ffffff;
 }
 
-.menu li{
-    margin-right: 70px;
-    padding-right: 30px;
+.menu-bar-link {
+    padding-left: 10px;
 }
 
-.menu a {
-    color: white;
-    text-decoration: none;
-}
-
-.nav-wrapper{
-    padding-bottom: 10px;
+.menu-bar-link:hover {
+    opacity: 0.8;
 }

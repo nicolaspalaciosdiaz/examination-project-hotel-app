@@ -1,48 +1,64 @@
-.spa-sauna-image-and-text-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.spa-page {
+    min-height: 80vh;
 }
 
-.spa-spa-image {
+.spa-header {
+    height: 400px;
+}
+
+.spa-header-image-text {
+    position: relative;
+    height: 100%;
+}
+
+.spa-header-image {
     width: 100%;
-    height: 70vh;
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
-.spa-sauna-image, .spa-sauna-text {
-    margin-top: 10vh;
+.spa-header-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
 
-.spa-sauna-image {
-    padding-left: 10vh;
-    height: 70vh;
+.spa-header-heading {
+    font-size: 70px;
 }
 
-.spa-sauna-text {
-    padding-right: 10vh;
-    padding-left: 10vh;
-}
-
-.spa-spa-pool-image-and-text-container {
+.spa-content {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    padding: 30px;
 }
 
-.spa-spa-pool-image, .spa-spa-text {
-    margin-top: 10vh;
+.spa-content-block {
+    display: flex;
+    padding: 20px;
 }
 
-.spa-spa-pool-image {
+.spa-content-block-image-container {
     width: 100%;
-    height: 50vh;
-    width: 95vh;
-    padding-right: 10vh;
-    padding-left: 10vh;
 }
 
-.spa-spa-text {
-    padding-right: 10vh;
-    padding-left: 10vh;
+.spa-content-block-image {
+    height: 100%;
+    width: 100%;
 }
 
+.spa-content-block-text {
+    padding: 0 20px;
+    text-align: left;
+}
+
+.spa-content-block-paragraph {
+    padding: 10px 0;
+}

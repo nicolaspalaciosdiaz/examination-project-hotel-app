@@ -1,6 +1,22 @@
+.users-page {
+    min-height: 80vh;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.users {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+}
+
 .user {
     list-style: none;
-    border: 1px solid red;
     margin: 5px 0;
     padding: 10px;
+    background-color: #2154544f;
+    color: #215454;
 }

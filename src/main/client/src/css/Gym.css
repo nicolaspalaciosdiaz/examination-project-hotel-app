@@ -1,0 +1,131 @@
+.gym-page {
+    min-height: 80vh;
+}
+
+.gym-header {
+    height: 400px;
+}
+
+.gym-header-image-text {
+    position: relative;
+    height: 100%;
+}
+
+.gym-header-image {
+    width: 100%;
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.gym-header-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.gym-header-heading {
+    font-size: 70px;
+}
+
+.gym-content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.gym-content-block {
+    display: flex;
+    padding: 20px;
+}
+
+.gym-content-block-image-container {
+    width: 100%;
+}
+
+.gym-content-block-image {
+    height: 100%;
+    width: 100%;
+}
+
+.gym-content-block-text {
+    padding: 0 20px;
+    text-align: left;
+}
+
+.gym-content-block-paragraph {
+    padding: 10px 0;
+}
+
+/*.facility-gym-image-wrapper {*/
+/*    height: 100vh;*/
+/*}*/
+
+/*.facility-gym-image {*/
+/*    height: 70%;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.facilities-h1-hotel-project, .facilities-text-stockholm, .facilities-text-sweden {*/
+/*    color: #B6B784;*/
+/*}*/
+
+/*.facility-workingOut-image-and-text-container {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+/*.facilities-text {*/
+/*    color: #004933;*/
+/*}*/
+
+/*.facility-workingOut-image-wrapper {*/
+/*    padding-left: 60px;*/
+/*    padding-right: 160px;*/
+/*}*/
+
+/*.facility-workingOut-image {*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.facility-workingOut-image-description {*/
+/*    padding-left: 160px;*/
+/*    padding-right: 60px;*/
+/*}*/
+
+/*.facility-dumbbells-image-and-text-container {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+/*.facility-dumbbells-image-wrapper {*/
+/*    margin-top: 200px;*/
+/*    padding-left: 160px;*/
+/*    height: 55vh;*/
+/*    width: 100vh;*/
+/*}*/
+
+/*.facility-dumbbells-image {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/
+
+/*.facility-dumbbells-image-description {*/
+/*    margin-top: 180px;*/
+/*}*/
+
+/*.dumbell-text {*/
+/*    margin-top: 20px;*/
+/*    padding-left: 60px;*/
+/*    padding-right: 160px;*/
+/*    color: #004933;*/
+/*}*/

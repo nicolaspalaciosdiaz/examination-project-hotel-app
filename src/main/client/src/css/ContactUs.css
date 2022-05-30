@@ -1,0 +1,9 @@
+.contact-page {
+    min-height: 80vh;
+}
+
+.contactus-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

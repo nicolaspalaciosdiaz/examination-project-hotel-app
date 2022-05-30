@@ -1,0 +1,40 @@
+.login-page {
+    min-height: 80vh;
+}
+
+.login-page-h1-loggain {
+    margin: 40px 0;
+}
+
+.login-page-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 0px;
+}
+
+.login-page-email-field, .login-page-password-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-page-form-field {
+    padding: 10px 50px;
+}
+
+.login-page-input-type-password, .login-page-input-type-email {
+    width: 25%;
+    padding: 12px 20px;
+    margin-left: 700px;
+    box-sizing: border-box;
+}
+
+.login-page-btn-btn-login {
+    margin: 30px 0;
+}
+
+.login-page-links {
+    display: flex;
+    flex-direction: column;
+}

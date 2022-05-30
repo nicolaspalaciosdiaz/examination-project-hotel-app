@@ -1,0 +1,19 @@
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #184040;
+    padding: 40px;
+    height: 20vh;
+}
+
+.footer-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+}
+
+/*.footer-hotel-name-h1 {*/
+/*    font-weight: bold;*/
+/*    color: #B6B784;*/
+/*}*/

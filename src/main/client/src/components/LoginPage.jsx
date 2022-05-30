@@ -3,6 +3,7 @@ import axios from 'axios';
 import MenuBar from "./MenuBar";
 import Footer from "./Footer";
 import {Link} from "react-router-dom";
+import "../css/Loginpage.css";
 
 function LoginPage(props) {
     const [state, setState] = useState({
@@ -48,37 +49,46 @@ function LoginPage(props) {
     return (
         <React.Fragment>
             <MenuBar/>
-            <div>
-                <div>
+            <main className="login-page">
+                <div className="login-page-h1-loggain">
                     <h1>LOGGA IN</h1>
                 </div>
-                <div>
-                    <form>
-                        <div>
-                            <label htmlFor="exampleInputEmail">EMAIL</label>
-                            <input type="email" id="email"
-                                   placeholder="Skriv din email"/>
-                        </div>
-                        <div>
-                            <label htmlFor="InputPassword">PASSWORD</label>
-                            <input type="password"
-                                   id="password"
-                                   placeholder="Lösenord"/>
-                        </div>
-                        <button type="submit" className="btn btn-login">
-                            LOGGA IN
-                        </button>
-                        {/* Todo Glömt lösne ska bytas till länk*/}
-                        <h1>GLÖMT LÖSENORD</h1>
-                    </form>
-                    <Link to="/register" className="btn btn-userform">BLI MEDELM</Link>
+                <form>
+                    <div className="login-page-form-container">
 
+                        <div className="login-page-email-field">
+                            <label>
+                                <p>EMAIL</p>
+                                <input className="login-page-form-field"
+                                    type="email"
+                                    id="email"
+                                    placeholder="Skriv din email"/>
+                            </label>
+                        </div>
+                        <div className="login-page-password-field">
+                            <label>
+                                <p>LÖSENORD</p>
+                                <input className="login-page-form-field"
+                                    type="password"
+                                    id="password"
+                                    placeholder="Lösenord"/>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="submit" value="LOGGA IN"/>
+                        </div>
+                    </div>
+                </form>
+                <div className="login-page-links">
+                    <Link to="/">GLÖMT LÖSENORD</Link>
+                    <Link to="/register" className="btn btn-userform">BLI MEDELM</Link>
                     <Link to="/">TILLBAKA</Link>
                 </div>
-            </div>
+            </main>
             <Footer/>
         </React.Fragment>
-    );
+    )
+        ;
 }
 
 export default LoginPage;

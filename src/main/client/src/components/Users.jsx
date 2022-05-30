@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import User from "./User";
+import Footer from "./Footer";
 
 function Users() {
     const [users, setUsers] = useState([]);
@@ -14,24 +15,30 @@ function Users() {
                 setUsers(response.data);
                 setIsLoading(false);
             }).catch((error) => {
-                setHasError(true);
-                setIsLoading(false);
-            });
-        }, []);
+            setHasError(true);
+            setIsLoading(false);
+        });
+    }, []);
 
-    return <div>
-        <ul>
-            {
-                isLoading ?
-                <div>Laddar...</div> :
-                hasError ?
-                    <div>Något gick fel...</div> :
-                    users.map((user) => {
-                        return <User key={user.id} userProp={user} />
-                    })
-            }
-        </ul>
-    </div>;
+    return (
+        <React.Fragment>
+            <main className="users-page">
+                <h2>Användare</h2>
+                <ul className="users">
+                    {
+                        isLoading ?
+                            <div>Laddar...</div> :
+                            hasError ?
+                                <div>Något gick fel...</div> :
+                                users.map((user) => {
+                                    return <User key={user.id} userProp={user}/>
+                                })
+                    }
+                </ul>
+            </main>
+            <Footer/>
+        </React.Fragment>
+    )
 }
 
 export default Users;

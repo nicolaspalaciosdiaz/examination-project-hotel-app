@@ -1,0 +1,31 @@
+.register-page {
+    min-height: 80vh;
+}
+
+.register-discount-text {
+    font-size: 40px;
+    color: #B6B784;
+}
+
+.register-discount-text2 {
+    color: #215454;
+}
+
+.register-h1-become-member-in-hotel-project {
+    color: #B6B784;
+}
+
+.register-description-become-member {
+    color: #215454;
+}
+
+.register-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 0px;
+}
+
+.register-page-field {
+    padding: 10px 50px;
+}
