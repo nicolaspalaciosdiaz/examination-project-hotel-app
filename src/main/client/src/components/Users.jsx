@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import User from "./User";
 import Footer from "./Footer";
+import MenuBar from "./MenuBar";
 
 function Users() {
     const [users, setUsers] = useState([]);
@@ -22,6 +23,7 @@ function Users() {
 
     return (
         <React.Fragment>
+            <MenuBar/>
             <main className="users-page">
                 <h2>Användare</h2>
                 <ul className="users">

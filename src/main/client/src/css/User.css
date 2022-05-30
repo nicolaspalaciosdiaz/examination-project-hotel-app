@@ -19,4 +19,23 @@
     padding: 10px;
     background-color: #2154544f;
     color: #215454;
+    text-align: left;
+}
+
+.user-block {
+    padding: 5px 10px;
+}
+
+.user-block.name {
+    font-size: 20px;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 12px;
+    padding-right: 5px;
+}
+
+.info {
+    font-size: 12px;
 }

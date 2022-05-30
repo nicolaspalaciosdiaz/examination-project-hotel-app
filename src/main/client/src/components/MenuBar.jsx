@@ -18,6 +18,9 @@ const MenuBar = () => {
                     <Link to="/services">Boka Service</Link>
                 </li>
                 <li className="menu-bar-link">
+                    <Link to="/users">Min sida</Link>
+                </li>
+                <li className="menu-bar-link">
                     <Link to="/loginpage">Logga In</Link>
                 </li>
             </ul>

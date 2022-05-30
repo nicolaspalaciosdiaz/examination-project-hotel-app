@@ -1,30 +1,40 @@
 .home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     min-height: 80vh;
+    padding: 30px 50px 50px 50px;
 }
 
-.body-image-wrapper {
+.home-block {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    padding-bottom: 20px;
+}
+
+.home-block-heading {
+    color: #B6B784;
+    padding: 10px 10px 5px 10px;
+}
+
+.home-block-text {
+    color: #004933;
+    padding: 10px;
+
+}
+
+.home-block-image {
     height: 100%;
     width: 100%;
+    padding: 10px;
+
 }
 
-.homepage-h1-redefine-luxury {
-    color: #B6B784;
-}
-
-.homepage-text-description {
-    color: #004933;
-}
-
-.body-bedroom-image, .body-spa-image {
-    height: 60%;
-    width: 70%;
-}
-
-.homepage-leave-your-worries {
-    color: #004933;
-}
-
-.homepage-spa-text {
-    color: #004933;
+.home-block-image-container {
+    /*width: 60vw;*/
 }

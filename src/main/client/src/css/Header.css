@@ -3,19 +3,32 @@
     height: 750px;
 }
 
+.hotel-text-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #B6B784;
+    width: 100%;
+    background: #004933a6;
+    padding: 40px;
+}
+
 .hotel-text-container h1 {
-    font-size: 50px;
-    margin: 10px 0px 10px 0px;
-    color: #004933;
+    font-size: 40px;
+    margin: 0;
+
 }
 
 .hotel-text-container h2 {
     font-size: 70px;
-    margin: 10px 0px 10px 0px;
-    color: #B6B784;
+    margin: 0;
 }
 
 .hotel-text-container p {
-    color: #004933;
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: white;
 }
 

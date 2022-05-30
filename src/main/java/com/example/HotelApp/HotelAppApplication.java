@@ -91,7 +91,7 @@ public class HotelAppApplication {
             serviceRepository.save(new Service(
                     "gym",
                     1,
-                    100,
+                    150,
                     1
             ));
 
@@ -111,25 +111,25 @@ public class HotelAppApplication {
             serviceRepository.save(new Service(
                     "double room",
                     1,
-                    2000,
+                    2500,
                     1
             ));
             serviceRepository.save(new Service(
                     "deluxe room",
                     1,
-                    2000,
+                    3000,
                     1
             ));
             serviceRepository.save(new Service(
                     "superior room",
                     1,
-                    2000,
+                    3500,
                     1
             ));
             serviceRepository.save(new Service(
                     "superior suite",
                     1,
-                    2000,
+                    4000,
                     1
             ));
         };

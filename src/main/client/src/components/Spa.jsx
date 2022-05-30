@@ -89,5 +89,3 @@ const Spa = () => {
     );
 }
 export default Spa;
-
-// TODO att lägga till bilder och länkar med erbjudannde på behandlingar.
